@@ -21,9 +21,9 @@ L = 0.2;  % shaft length (m)
 R = Shaft_OD/2;  % shaft radius (m)
 
 % MATERIAL PROPERTIES 
-% (mild steel from HLT)
+% (ultra high strength steel from HLT)
 G = 80e9;  % shear modulus of material (Pa)
-Sy = 240e6;  % yield strength of material (Pa)
+Sy = 1600e6;  % yield strength of material (Pa)
 
 %% Calculations
 

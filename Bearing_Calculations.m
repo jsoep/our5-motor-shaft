@@ -1,6 +1,6 @@
 %OUR 5 Motor Bearing Calculations
 
-ChainForce = 16000; %Max force on chain as outlined by chain size excel (N)
+ChainForce = 9730; %Max force on chain as outlined by chain size excel (N)
 %dimensions 'a' and 'b' set via inspection of the solidworks assembly - rough%
 a = 90e-3; %distance from sprocket to the near side bearing - see dimension 'a' in drawing (m)
 b = 210e-3; %distance from sprocket to the far side bearing - see dimension 'b' in drawing (m)

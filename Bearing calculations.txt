@@ -1,0 +1,19 @@
+Bearing calculations:
+
+Draw a free-body diagram
+We know the load of the chain and the dimension - distance between parts
+setting the sums of the moments and forces to zero give the reaction forces of the bearings
+
+check axial forces
+
+check max rpm of motor, check gear ratio to see the max rpm that bearing experiences - we also need to know the shaft diameters for this 
+
+Plan:
+Use on shape to get dimensions a, b, (c and d)
+Use matlab torsion script to find the lowest shaft diameter that can be chosen
+created a matlab script where you input the max chain force and it outputs the radial forces on each bearing
+
+find a bearing that meets the 3 criteria 
+rated for max rpm of 8000
+is rated for a shaft diameter that is within a suitable safety factor from torsion code
+can withstand the radial forces on it

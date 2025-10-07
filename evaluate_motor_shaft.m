@@ -34,13 +34,13 @@ end
 J = pi/32 * (shaft_OD^4);  % polar moment of inertia (m^4) for solid circular shaft
 I = pi/64 * (shaft_OD^4); %second moment for bending (m^4) for solid circular shaft
 max_shear_stress = ((motor_torque * R)/J);  % shear stress at outer surface (max) in Pa
-disp(['Max Shear Stress in shaft = ',num2str(max_shear_stress/1e6), ' MPa'])
+disp(['Max shear stress in shaft = ',num2str(max_shear_stress/1e6), ' MPa'])
 % Bending
 max_bending_stress = ((peak_bending_moment*R)/I);
-disp(['Max Bending Stress in shaft = ',num2str(max_bending_stress/1e6), ' MPa'])
-% Von misses
+disp(['Max bending stress in shaft = ',num2str(max_bending_stress/1e6), ' MPa'])
+% Von Mises
 VM_stress = sqrt((max_bending_stress^2) + (3*(max_shear_stress)^2));
-disp(['Von Misses Stress = ',num2str(VM_stress/1e6), ' MPa'])
+disp(['Von Mises stress = ',num2str(VM_stress/1e6), ' MPa'])
 % Safety Factor
 safety_factor = Sy/VM_stress;
 disp(['Safety factor for combined bending and torsion = ',num2str(safety_factor)])

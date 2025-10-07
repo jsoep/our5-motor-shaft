@@ -14,6 +14,6 @@ disp(['chain tension = ', num2str(chain_tension), ' kN']);
 % Calculate the angle of the chain above the horizon (degrees)
 delta_radius = (driven_sprocket_diameter - driving_sprocket_diameter) / 2;
 angle_above_horizon = atand(delta_radius / dist);
-chain_force = 2 * chain_tension * cosd(angle_above_horizon);  % kN
+chain_force = chain_tension * cosd(angle_above_horizon);  % kN
 disp(['chain force = ', num2str(chain_force), ' kN']);
 end

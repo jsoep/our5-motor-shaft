@@ -1,4 +1,4 @@
-function [VM_stress, safety_factor] = evaluate_motor_shaft(shaft_OD, shaft_length, peak_bending_moment, motor_torque)
+function [VM_stress, safety_factor] = evaluate_motor_shaft(shaft_OD, shaft_length, peak_bending_moment, motor_torque, material)
 % evaluate_motor_shaft Evaluate the motor shaft for combined bending and torsion.
 %   shaft_OD: outer diameter of the shaft (mm)
 %   shaft_length: length of the shaft between sprocket and motor (mm)
@@ -12,11 +12,18 @@ shaft_OD = shaft_OD / 1000;  % convert mm to m
 shaft_length = shaft_length / 1000;  % convert mm to m
 R = shaft_OD/2;  % shaft radius (m)
 
-% MATERIAL PROPERTIES 
-% 300M steel (aka ultra high strength steel in HLT)
-% source: https://asm.matweb.com/search/SpecificMaterial.asp?bassnum=MS300M
-G = 80e9;  % shear modulus of material (Pa)
-Sy = 1550e6;  % yield strength of material (Pa)
+%% Material properties
+if material == "300M"  % 300M steel (aka ultra high strength steel in HLT)
+    % source: https://asm.matweb.com/search/SpecificMaterial.asp?bassnum=MS300M
+    G = 80e9;  % shear modulus of material (Pa)
+    Sy = 1550e6;  % yield strength of material (Pa) 
+elseif material == "4340"  % 4340 steel
+    % source: https://asm.matweb.com/search/specificmaterial.asp?bassnum=m434ae
+    G = 80e9;  % shear modulus of material (Pa)
+    Sy = 710e6;  % yield strength of material (Pa) 
+else
+    error('Unknown material: %s', material);
+end
 
 %% Calculations
 

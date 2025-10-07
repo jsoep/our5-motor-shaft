@@ -10,6 +10,7 @@ dist = 240.25;  % mm - center to center distance between sprockets
 % Shaft
 shaft_OD = 35;  % mm
 shaft_length = 143.704;  % mm - between sprocket and motor
+shaft_material = "4340";  % material of the shaft
 
 %% Bearing radial force calculations
 chain_force = get_chain_force(chain, driving_teeth, driven_teeth, dist, motor_torque);
@@ -26,4 +27,4 @@ disp(['Radial force experienced by bearing B = ', num2str(radial_force_b), ' kN'
 
 %% Shaft calculations
 peak_bending_moment = dist_a * radial_force_a;  % Nm
-[shaft_VM_stress, shaft_SF] = evaluate_motor_shaft(shaft_OD, shaft_length, peak_bending_moment, motor_torque);
+[shaft_VM_stress, shaft_SF] = evaluate_motor_shaft(shaft_OD, shaft_length, peak_bending_moment, motor_torque, shaft_material);
